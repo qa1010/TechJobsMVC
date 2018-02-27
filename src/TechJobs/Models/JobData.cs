@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -9,6 +10,7 @@ namespace TechJobs.Models
     {
         static List<Dictionary<string, string>> AllJobs = new List<Dictionary<string, string>>();
         static bool IsDataLoaded = false;
+        
 
         public static List<Dictionary<string, string>> FindAll()
         {
@@ -41,6 +43,11 @@ namespace TechJobs.Models
             // Bonus mission: sort results alphabetically
             values.Sort();
             return values;
+        }
+
+        internal static dynamic FindByValue(string searchType, string searchTerm)
+        {
+            throw new NotImplementedException();
         }
 
         /**
@@ -90,6 +97,7 @@ namespace TechJobs.Models
             foreach (Dictionary<string, string> row in AllJobs)
             {
                 string aValue = row[column];
+
 
                 if (aValue.ToLower().Contains(value.ToLower()))
                 {

@@ -19,6 +19,8 @@ namespace TechJobs.Controllers
             columnChoices.Add("location", "Location");
             columnChoices.Add("position type", "Position Type");
             columnChoices.Add("all", "All");
+
+            
         }
 
         public IActionResult Index()
